@@ -1,0 +1,19 @@
+{
+  "name": "macysrandominstagrampizzapicker.api",
+  "version": "1.0.0",
+  "description": "The API service for the Macy's Random Instagram Pizza Picker application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Programazing/MacysRandomInstagramPizzaPicker.API.git"
+  },
+  "author": "Programazing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Programazing/MacysRandomInstagramPizzaPicker.API/issues"
+  },
+  "homepage": "https://github.com/Programazing/MacysRandomInstagramPizzaPicker.API#readme"
+}
