@@ -21,14 +21,14 @@ router.get('/', (req, res) => {
 });
 
 // Endpoint to fetch a random pizza item
-router.get('/api/pizza', async (req, res) => {
+router.get('/pizza', async (req, res) => {
   try {
     const pizzaItems = await fetchPizzaItems(menusInput);
     const randomPizza = pizzaItems[Math.floor(Math.random() * pizzaItems.length)];
     res.json(randomPizza);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error fetching pizza items');
+    res.status(500).send(`Error fetching pizza items. ${error}`);
   }
 });
 

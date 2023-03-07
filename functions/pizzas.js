@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
 const { MENUS_QUERY } = require('./queries.js');
+import fetch from 'node-fetch';
 
 async function fetchPizzaItems(menusInput) {
   const url = 'https://ws-api.toasttab.com/consumer-app-bff/v1/graphql';
