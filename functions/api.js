@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const serverless = require('serverless-http');
+const cors = require('cors');
 const { fetchPizzaItems } = require('./pizzas.js');
 
 const app = express();
+app.use(cors());
 const router = express.Router();
+
 
 const menusInput = {
     shortUrl: 'macy-s-place-pizzeria',
