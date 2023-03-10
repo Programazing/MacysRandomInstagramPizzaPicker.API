@@ -1,5 +1,6 @@
-const { MENUS_QUERY } = require('./queries.js');
+const MENUS_QUERY = require('./queries.js');
 import fetch from 'node-fetch';
+const itemsToFilter = require('./filterList.js')
 
 async function fetchPizzaItems(menusInput) {
   const url = 'https://ws-api.toasttab.com/consumer-app-bff/v1/graphql';
@@ -26,14 +27,13 @@ async function fetchPizzaItems(menusInput) {
     throw new Error('Instagram Pizzas group not found in Food Menu');
   }
 
-const itemsToFilter = ['Macys Fish Fry Dinner'];
-const instagramPizzasItems = instagramPizzasGroup.items.filter((item) => !itemsToFilter.includes(item.name));
+  const instagramPizzasItems = instagramPizzasGroup.items.filter((item) => !itemsToFilter.includes(item.name));
 
-const uniqueInstagramPizzasItems = instagramPizzasItems
-  .map((item) => ({ ...item, name: item.name.replace(/^Large\s/, '').replace(/^Small\s/, '') }))
-  .filter((item, index, arr) => arr.findIndex((i) => i.name === item.name) === index);
+  const uniqueInstagramPizzasItems = instagramPizzasItems
+    .map((item) => ({ ...item, name: item.name.replace(/^Large\s/, '').replace(/^Small\s/, '') }))
+    .filter((item, index, arr) => arr.findIndex((i) => i.name === item.name) === index);
 
-const pizzaItems = uniqueInstagramPizzasItems.map(({ name, description, imageUrl }) => ({ name, description, imageUrl }));
+  const pizzaItems = uniqueInstagramPizzasItems.map(({ name, description, imageUrl }) => ({ name, description, imageUrl }));
 
   return pizzaItems;
 }

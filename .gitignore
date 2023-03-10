@@ -107,3 +107,5 @@ state.json
 
 # VS Code Settings
 .vscode/settings.json
+# Local Netlify folder
+.netlify

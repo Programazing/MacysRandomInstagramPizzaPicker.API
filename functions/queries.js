@@ -39,6 +39,4 @@ const MENUS_QUERY = `
   }
 `;
 
-module.exports = {
-  MENUS_QUERY,
-};
+module.exports = MENUS_QUERY;
