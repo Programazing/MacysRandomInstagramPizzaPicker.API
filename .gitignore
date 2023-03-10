@@ -107,5 +107,7 @@ state.json
 
 # VS Code Settings
 .vscode/settings.json
+
 # Local Netlify folder
-.netlify
+.netlify/functions-serve
+.netlify/edge-functions-import-map.json
